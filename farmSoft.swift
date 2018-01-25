@@ -23,16 +23,16 @@ func feed () {
     income -= 4
 }
 //add wheat to the barn
-func harvest() {
-    barn["wheat"]! += 100
+func harvest(add quantity: Int) {
+    barn["wheat"]! += quantity
 }
 //add wool to the barn
-func mow () {
-    barn["wool"]! += 30
+func mow (add quantity: Int) {
+    barn["wool"]! += quantity
 }
 //add milk to the barn
-func milk() {
-    barn["milk"]! += 30
+func milk(add quantity: Int) {
+    barn["milk"]! += quantity
 }
 //sell products and reset stocks
 func sell () {
@@ -58,6 +58,20 @@ func stock(){
 //MARK: interaction functions
 //============
 
+//add quantity
+func addQuantity(of type: String) -> Int? {
+    print("combien de \(type) ?")
+    if let answer = readLine(){
+        if let quantity = Int(answer){
+            return quantity
+        }
+    }
+    //si la valeur n'est pas lue
+    print("je n'ai pas saisie")
+    return nil
+}
+
+
 //choose an activity
 func activity(){
     print("\nquelle est ton activité ?"
@@ -71,16 +85,22 @@ func activity(){
         switch choice {
         case "1": feed()
         case "2": sell()
-        case "3": milk()
-        case "4": harvest()
-        case "5": mow()
+        case "3": if let quantity = addQuantity(of: "bidons") {
+            milk(add: quantity)
+            }
+        case "4": if let quantity = addQuantity(of: "bottes") {
+            harvest(add: quantity)
+            }
+        case "5": if let quantity = addQuantity(of: "pelottes") {
+            mow(add: quantity)
+            }
         default:
             print("choisis une activité parmis les suivantes\n")
             activity()
         }
     }
     print("bravo !\n"
-        + "\net maintenant,")
+        + "\net maintenant, ")
 }
 
 //main menu
