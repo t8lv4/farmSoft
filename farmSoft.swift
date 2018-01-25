@@ -6,14 +6,17 @@
 //
 
 import Foundation
+//===========
+//MARK: variables and collection
+//===========
 
-// variables and collection declarations and init.
 var income: Double = 0
-
 var barn: [String : Int] = ["wheat" : 0, "wool" : 0, "milk" : 0]
 
+//===========
+//MARK: activity functions
+//===========
 
-//functions def
 //feed the cows
 func feed () {
     income -= 4
@@ -50,6 +53,9 @@ func stock(){
         + "\n   \(barn["wool"]!) pelottes de laine\n")
 }
 
+//============
+//MARK: interaction functions
+//============
 
 //choose an activity
 func activity(){
@@ -98,7 +104,11 @@ func menu() {
     }
 }
 
-//loop
+
+//============
+//MARK: loop
+//============
+
 while true {
     menu()
 }
