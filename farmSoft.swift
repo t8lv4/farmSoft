@@ -14,23 +14,23 @@ var barn: [String : Int] = ["wheat" : 0, "wool" : 0, "milk" : 0]
 
 
 //functions def
-
+//feed the cows
 func feed () {
     income -= 4
 }
-
+//add wheat to the barn
 func harvest() {
     barn["wheat"]! += 100
 }
-
+//add wool to the barn
 func mow () {
     barn["wool"]! += 30
 }
-
+//add milk to the barn
 func milk() {
     barn["milk"]! += 30
 }
-
+//sell products and reset stocks
 func sell () {
     income += Double(barn["wheat"]!) * 0.3
     income += Double(barn["wool"]!) * 1
@@ -38,11 +38,11 @@ func sell () {
     //empty barn
     barn = ["wheat" : 0, "wool" : 0, "milk" : 0]
 }
-
+//get income balance
 func bank() {
     print("\nvotre banque contient \(income) euros\n")
 }
-
+//print stocks values
 func stock(){
     print("\nles stocks :\n"
         + "\n   \(barn["milk"]!) bidons de lait"
@@ -51,7 +51,7 @@ func stock(){
 }
 
 
-
+//choose an activity
 func activity(){
     print("\nquelle est votre activité ?"
     + "\n1. nourrir les vaches"
@@ -73,9 +73,10 @@ func activity(){
         }
     }
     print("bravo !\n"
-        + "\net maintenant :")
+        + "\net maintenant,")
 }
 
+//main menu
 func menu() {
     print("\nque voulez vous faire ?"
         + "\n1. enregistrer une nouvelle activité"
