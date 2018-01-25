@@ -9,3 +9,9 @@ import Foundation
 
 
 print("hello World")
+
+print("comment vous appelez vous ?")
+if let name = readLine(){
+    print("Bonjour \(name)")
+}
+
