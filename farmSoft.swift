@@ -1,6 +1,7 @@
 //
 //  farmSoft.swift
 //  a stock management app.
+//  follows an OpenClassrooms exercice
 //
 //  Created by Morgan on 25/01/2018.
 //
@@ -43,7 +44,7 @@ func sell () {
 }
 //get income balance
 func bank() {
-    print("\nvotre banque contient \(income) euros\n")
+    print("\nton solde est \(income) euros\n")
 }
 //print stocks values
 func stock(){
@@ -59,7 +60,7 @@ func stock(){
 
 //choose an activity
 func activity(){
-    print("\nquelle est votre activité ?"
+    print("\nquelle est ton activité ?"
     + "\n1. nourrir les vaches"
     + "\n2. vendre mes produits"
     + "\n3. traire les vaches"
@@ -74,7 +75,7 @@ func activity(){
         case "4": harvest()
         case "5": mow()
         default:
-            print("choisissez une activité parmis les suivantes\n")
+            print("choisis une activité parmis les suivantes\n")
             activity()
         }
     }
@@ -84,7 +85,7 @@ func activity(){
 
 //main menu
 func menu() {
-    print("\nque voulez vous faire ?"
+    print("\nque veux-tu faire ?"
         + "\n1. enregistrer une nouvelle activité"
         + "\n2. consulter ma banque"
         + "\n3. consulter les stocks\n")
